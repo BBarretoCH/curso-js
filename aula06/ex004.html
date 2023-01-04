@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>My first JavaScript</h2>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = Date(), document.getElementById('demo').style.fontSize = '30px';">Click me to display Date and Time.</button>
+    <p id="demo">A data e a hora irão aparecer aqui</p>
+    <script>
+        var nome = window.prompt('Qual é o seu nome') //janela que pergunta o nome
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras </br>`) //escreve no corpo 
+        document.write(`Seu nome em maiúsculas é <strong>${nome.toUpperCase()}</strong> <br>`)
+        document.write(`Seu nome em minusculas é <strong>${nome.toLowerCase()}</strong>`)
+    </script>
+</body>
+</html>

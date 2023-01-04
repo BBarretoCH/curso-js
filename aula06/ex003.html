@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro script</title>
+    <style>
+        body {
+           background-color: black; 
+        }
+
+        h1 {
+            color: white;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            color: white;
+            font-size: 1em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meu primeiro script</h1>
+    <p id="demo"> JavaScript can change some HTML content</p>
+    <button type="button" onclick= "document.getElementById('demo').innerHTML = 'Conteúdo modificado' "> Clique no botão</button>
+    <script>
+        var n1 = Number(window.prompt('Digite um número: '))
+        var n2 = Number(window.prompt('Digite outro número: '))
+        var soma = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${soma}`)
+    </script>
+</body>
+</html>
