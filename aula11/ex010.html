@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: rgba(0, 0, 0, 0.208);
+        }
+    </style>
+</head>
+<body>
+    <img src="" alt="">
+    <h1 id="t1">Sistema de Multas</h1>
+    <label for="txtvel">Velocidade do Carro: </label>
+    <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="info"></div>
+    <script>
+        function calcular() {
+            var txtv = document.getElementById('txtvel')
+            var res = document.getElementById('info')
+            var vel = Number(txtv.value)
+            res.innerHTML = `Sua velocidade atual é <strong>${vel} Km/h</strong>`
+            if(vel > 60) {
+                res.innerHTML += `<p>Você está <strong> MULTADO</strong> por excesso de velocidade`
+            }
+            res.innerHTML += '<p>Dirija sempre com cinto de segurança!</p>'
+        }
+        var fundo = window.document.body
+        fundo.style.backgroundColor = 'lightblue'  
+        var t1 = window.document.getElementById('t1')
+        t1.style.color = 'Darkslategray'
+        var input1 = window.document.getElementById('txtvel')
+    </script>
+</body>
+</html>
+

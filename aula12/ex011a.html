@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de votação</title>
+</head>
+<body>
+    <h1>Sou obrigado a votar?</h1>
+    <label for="txtvote">Minha idade: </label>
+    <input type="number" name="txtvote" id="txtvote">
+    <input type="button" value="Verificar" onclick="verify()">
+    <div id="res"></div>
+    <script>
+        function verify() {
+        var txtidade = document.getElementById('txtvote')
+        var idade = Number(txtidade.value)
+        var res = document.getElementById('res')
+        res.innerHTML = `A sua idade é ${idade}, portanto: `
+        if (idade < 16) {
+           res.innerHTML += ('Não vota')
+        } else if (idade < 18 || idade >= 65){
+           res.innerHTML += ('Voto opcional')
+        } else {
+           res.innerHTML += ('Voto obrigatório')
+        }
+        res.style.marginTop = '20px'
+        }
+    </script>
+</body>
+</html>
