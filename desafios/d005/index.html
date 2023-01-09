@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio conversor de medidas</title>
+    <style>
+        input {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+    <p>Clique no botão acima para iniciar</p>
+    <p id="demo"></p>
+    
+    <script>
+        function clicar() {
+            var distancia = Number(window.prompt('Digite uma distância em metros(m)'))
+            document.getElementById('demo').innerHTML = `A distância digitada em múltiplos de metros(m) é: ${distancia} </br>` + `${distancia/1000} Km </br>` + `${distancia/100} Hm </br>` + `${distancia/10} Dam </br>` + `${distancia*10} dm </br>` + `${distancia*100} cm </br>` + `${distancia} mm`
+        }
+
+        /* a exibição das converções poderia ser colocada dentro de uma variável e o document.getElementbyId ('id') teria seu valor igual ao da variável declarada. Por Ex: 
+
+            var descricao = `A distância digitada em múltiplos de metros(m) é: ${distancia} </br>` + `${distancia/1000} Km </br>` + `${distancia/100} Hm </br>` + `${distancia/10} Dam </br>` + `${distancia*10} dm </br>` + `${distancia*100} cm </br>` + `${distancia} mm`
+            
+            document.getElementById('demo').innerHTML = descricao */
+    </script>
+</body>
+</html>
