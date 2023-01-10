@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do conversor de moedas</title>
+    <style>
+        input {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &rarr; US$</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+    <p>Clique no botão acima para iniciar</p>
+    <p id="demo"></p>
+
+    <script>
+        var cotação = Number(window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora?'))
+        function clicar() {
+            var carteira = Number(prompt('Quantos R$ você tem na carteira ?'))
+            document.getElementById('demo').innerHTML = `Essa quantia de R$ ${carteira} reais que você possui é capaz de comprar US$ ${(carteira/cotação).toFixed(2)} dólares na cotação de hoje`
+        }
+
+        //lembrando que para fixar em duas Casas decimais utiliza-se a propriedade .ToFixed(n), sendo n = ao número de casas decimais.
+    </script>    
+</body>
+</html>
