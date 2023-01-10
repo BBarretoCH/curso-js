@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do conversor de temperaturas</title>
+    <style>
+        input {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+    <p>Clique no Botão acima para iniciar</p>
+    <p id="demo">O resultado irá aparecer aqui</p>
+
+    <script>
+        function clicar() {
+            var tempc = Number(window.prompt('Digite uma temperatura em °C (Celsius)'))
+            var tempf = (tempc* (9/5) + 32)
+            var tempk = tempc + 273.15
+
+            document.getElementById('demo').innerHTML = `A temperatura ${tempc} em Fahrenheit é igual a: ${tempf}. <br><br> A temperatura ${tempc} em Kelvin é igual a: ${tempk}`
+        }
+    </script>
+</body>
+</html>
