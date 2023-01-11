@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <style>
+        input {
+            padding: 20px;
+            width: 150px;
+        }
+
+        input:hover {
+            background-color: rgb(0, 0, 53);
+            color: white;
+            font-weight: bold;
+        }
+
+        .equação {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        
+        .delta {
+            font-weight: bold;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <p id ='demo'>Considerando uma equação no formato <span class="equação">ax² + bx + c = 0</span>, aperte o botão acima para calcular o valor de <span class="delta">&Delta;</span>.</p>
+    <p id="delta"></p>
+    <p id="res"></p>
+
+    <script>
+        function calcular() {
+            var a = Number(prompt('Qual é o valor de a?'))
+            var b = Number(prompt('Qual é o valor de b?'))
+            var c = Number(prompt('Qual é o valor de c?'))
+            var titulo = document.getElementById('demo')
+            var delta = (b**2) - (4*a*c)
+            var res = document.getElementById('res')
+            var x1 = (-b + Math.sqrt(delta) / 2 * a)
+            var x2 = (-b - Math.sqrt(delta) / 2 * a)
+            titulo.style.fontSize = '25px'
+            titulo.style.fontWeight = 'bold'
+             
+            document.getElementById('demo').innerHTML = 'Resolvendo Bhaskara'
+            if (b < 0 && c < 0) {
+                document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x²  ${b}x  ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = (${b})² - 4 . ${a} . (${c})</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}` 
+            } else if (b < 0 && c > 0) {
+                document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x²  ${b}x + ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = (${b})² - 4 . ${a} . ${c}</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
+            } else if (b > 0 && c < 0)
+            document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x² + ${b}x  ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = ${b}² - 4 . ${a} . (${c})</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
+                else {
+                    document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x² + ${b}x + ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = ${b}² - 4 . ${a} . ${c}</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
+                }
+        if (delta > 0 ) {
+            res.innerHTML = (`<hr>Existem duas raízes reais que são: <br><br> X1 = ${x1}<br> X2 = ${x2}`)
+        } else if (delta == 0) {
+            res.innerHTML = (`<hr>Existe uma raiz real que é igual a: ${x1}`)
+        } else {
+            res.innerHTML = ('<hr>Não existem raízes reais')
+        }
+        }        
+    </script>
+</body>
+
+</html>
