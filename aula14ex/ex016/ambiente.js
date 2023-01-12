@@ -20,7 +20,7 @@ function contar () {
         let p = Number(pass.value)
     //fim de [2]    
     //fim da 2ª etapa
-
+        //EXTRA: Caso o passo seja definido como 0 o programa irá exibir um alerta que o passo é inválido e considerar passo = 1
         if (p == 0) {
             window.alert('Passo inválido. Considerando Passo 1')
             p = 1
