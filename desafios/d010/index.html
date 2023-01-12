@@ -55,22 +55,24 @@
             titulo.style.fontWeight = 'bold'
              
             document.getElementById('demo').innerHTML = 'Resolvendo Bhaskara'
+
             if (b < 0 && c < 0) {
                 document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x²  ${b}x  ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = (${b})² - 4 . ${a} . (${c})</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}` 
             } else if (b < 0 && c > 0) {
                 document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x²  ${b}x + ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = (${b})² - 4 . ${a} . ${c}</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
             } else if (b > 0 && c < 0)
-            document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x² + ${b}x  ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = ${b}² - 4 . ${a} . (${c})</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
-                else {
-                    document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x² + ${b}x + ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = ${b}² - 4 . ${a} . ${c}</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
-                }
-        if (delta > 0 ) {
+                document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x² + ${b}x  ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = ${b}² - 4 . ${a} . (${c})</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
+            else {
+                document.getElementById('delta').innerHTML = `A equação atual é <strong>${a}x² + ${b}x + ${c} = 0</strong> <br><br> O cálculo realizado será <strong>&Delta; = ${b}² - 4 . ${a} . ${c}</strong> <br><br> O valor caulado foi <mark><strong>&Delta; = ${delta}`
+            }
+
+            if (delta > 0 ) {
             res.innerHTML = (`<hr>Existem duas raízes reais que são: <br><br> X1 = ${x1}<br> X2 = ${x2}`)
-        } else if (delta == 0) {
+            } else if (delta == 0) {
             res.innerHTML = (`<hr>Existe uma raiz real que é igual a: ${x1}`)
-        } else {
+            } else {
             res.innerHTML = ('<hr>Não existem raízes reais')
-        }
+            }
         }        
     </script>
 </body>
