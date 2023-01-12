@@ -1,0 +1,4 @@
+var a = 'Tudo bem?'
+while (a == 'Tudo bem?') {
+    console.log('Sim')
+}
