@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Números</title>
+</head>
+<style>
+    body {
+        background-color: rgb(6, 102, 158);
+        font-family: arial;
+        font-size: 20px;
+    }
+
+    header {
+        color: white;
+        text-align: center;
+    }
+
+    section {
+        background-color: white;
+        width: 500px;
+        border-radius: 10px;
+        padding: 20px;
+        margin: auto;
+    }
+
+    .contar {
+        padding: 10px;
+        width: 80px;
+        border-radius: 5px;
+    }
+
+    .contar:hover {
+        background-color: rgb(0, 0, 65);
+        color: white;
+        font-weight: bold;
+    }
+
+    section>div>input {
+        margin-top: 20px;
+    }
+
+    footer {
+        color: white;
+        text-align: center;
+        font-style: italic;
+    }
+
+    select#tablist {
+        width: 150px;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Número (entre 1 e 100):
+                <input type="number" name="fnum" id="fnum">
+                <input type="button" value="Adicionar" onclick="adicionar()">
+            </p>
+            <p>
+                <select name="lista" id="tablist" size="6"></select><br>
+                <input type="button" value="Finalizar" onclick="finalizar()">
+            </p>
+        <div>
+                <div id="res">
+                    retorno irá aparecer aqui
+                </div>
+    </section>
+
+    <footer>
+        <p>&copy; CursoEmVídeo</p>
+    </footer>
+    <script src="ambiente.js">
+
+    </script>
+</body>
+
+</html>
