@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            padding: 5px;
+        }
+
+        .importante0 {
+            background-color: rgba(218, 165, 32, 0.323);
+            padding: 10px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>JavaScript Statements</h2>
+        <p>A <strong>JavaScript program</strong> is a list of <strong>statements</strong> to be executed by a computer.
+        </p>
+        <p id="demo"></p>
+        <p>Um programa de computador é uma lista de instruções a ser executada por um computador. <br>
+            Em linguagem de programação essas instruções são chamadas de statements. <br>
+            Os statements de JavaScript são compostos de: <strong>Valores, operadores, expressoes, palavras chaves e
+                comentários</strong>
+    </section>
+
+    <section>
+        <h2>ponto e vírgula (semicolons)</h2>
+        <p>Ponto e vírgula(;) separam statements em JavaScript</p>
+        <p>Adicione um ponto e vírgula no fim de cada statement executável</p>
+        <p>Quando separadas por ponto e vírgula, multiplos statements podem ser declarados em uma linha EX: <br> let a,
+            b, c;<br>
+            a = 5; b = 6; c = a + b;</p>
+        <p class="importante0"> On the web, you might see examples without semicolons. Ending statements with semicolon
+            is not required, <span style="background-color: rgba(255, 0, 0, 0.444); padding: 10px;">but highly
+                recommended</span>.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript code Blocks</h2>
+        <p>JavaScript statements podem ser agrupados em blocos de códigos por meio do uso de chaves. Esse recurso é
+        utilizado quando queremos executar um bloco de código em conjunto. Tal prática é geralmente usada quando
+        aplicamos funções aos nossos códigos.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript Keyword(palavras-chave)</h2>
+        <p>JavaScript statements frequentemente começam com palavras chaves para indicar uma ação a ser realizada</p>
+        <p>As palavras-chave de referência podem ser encontradas nesse <a href="https://www.w3schools.com/js/js_reserved.asp">link</a></p>
+        <p></p>
+    </section>
+
+
+
+    <script>
+        let x, y, z; //statement 1
+        x = 5   //statement 2
+        y = 6 //statement 3
+        z = x + y //statement 4
+
+        document.getElementById('demo').innerHTML = `The value of z is ${z}`
+
+        
+    </script>
+</body>
+
+</html>

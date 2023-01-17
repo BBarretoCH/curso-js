@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .important{
+            background-color: goldenrod;
+            font-weight: bold;
+            line-height: 1.5em;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h2>My First Web Page</h2>
+    <p id="demo">My first Paragraph</p>
+    <p id="res"></p>
+    <input type="button" value="Click here" onclick ='myfunction()'>
+
+    <p class="important"> Changing the innerHTML property of an HTML element is a common way to display data in HTML.<br>
+        Podemos atribuir a mudança a uma variável, quando feito isso, devemos mudar o conteudo da variável. EX: <br>
+        let a = document.getElementById('demo')
+        a.innerHTML = 'Paragraph Changed'
+
+        <br>
+        Isso significa que o conteúdo HTML com id='demo' foi colocado dentro da variável a e em seguida teve seu conteúdo alterado por a.innerHTML = ''.
+    </p>
+    <script>
+        function myfunction() {
+            document.getElementById('res').innerHTML = 5*6
+        }
+    </script>
+</body>
+</html>
