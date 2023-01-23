@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    h2, p {
+        padding: 10px;
+    }
+
+    .all {
+        padding-left: 10px;
+    }
+
+    input {
+        display:block;
+        border: 2px solid black;
+        padding: 5px;
+    }
+
+    input#go {
+        margin: 10px;
+        width: 166px;
+        border-radius: 5px;
+    }
+
+    input#go:hover {
+        background-color: rgb(3, 3, 60);
+        color: white;
+        font-weight: bolder;
+    }
+    #demo1, #demo2, #demo3, #demo4, #demo5 {
+        line-height: 1.5em;
+    }
+    
+</style>
+<body class="documento-completo">
+    <h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<div class="all">
+    n1: <input type="number" id="n1">
+    n2: <input type="number" id="n2">
+    <div class="a">
+        n3: <input type="number" id="n3">
+        n4: <input type="number" id="n4">
+    </div>
+    <div class="b">
+        n5: <input type="number" id="n5">
+    </div>
+    n6: <input type="number" id="n6">
+</div>
+
+<input id ="go" type="button" value="Calcular" onclick= "go()">
+
+<div id="demo1"></div>
+<div id="demo2"></div>
+<div id="demo3"></div>
+<div id="demo4"></div>
+<div id="demo5"></div>
+
+<script>
+    function go() {        
+        
+        let n1t = document.getElementById('n1');
+        let n2t = document.getElementById('n2');
+        let n3t = document.getElementById('n3');
+        let n4t = document.getElementById('n4');
+        let n5t = document.getElementById('n5');
+        let n6t = document.getElementById('n6'); 
+
+        let n1 = Number(n1t.value);
+        let n2 = Number(n2t.value);
+        let n3 = Number(n3t.value);
+        let n4 = Number(n4t.value);
+        let n5 = Number(n5t.value);
+        let n6 = Number(n6t.value);
+
+        //parte 1 somar tudo que está dentro de all
+
+        let sumAll = 0;
+        const all = [n1, n2, n3, n4, n5, n6];
+        all.forEach(somaAll = (itens) => sumAll += itens);
+        document.getElementById('demo1').innerHTML = `O valor da soma de todos os elementos é: ` + sumAll
+
+        // parte 2 dentro de div(n3,n4,n5)
+        let sumDivs = 0;
+        const insideDivs = [n3, n4, n5];
+        insideDivs.forEach(somaDivs = (itens) => sumDivs += itens);
+        document.getElementById('demo2').innerHTML = `O valor da soma dos elementos(n3, n4, n5) é: ` + sumDivs;
+   
+        //parte 3 somar tudo que for sibling de n1
+        let nextSibling = n1t;
+        let sumSiblings = 0;
+        while(nextSibling = nextSibling.nextElementSibling) {
+            if (nextSibling.tagName == 'INPUT') {
+                sumSiblings += Number(nextSibling.value)
+            }
+        }
+        document.getElementById('demo3').innerHTML = `O valor da soma dos elementos siblings de n1 é: ` + sumSiblings
+
+        //parte 4 somar tudo que tiver dentro da classe a
+
+        let sumClassA = 0;
+        const classA = [n3, n4]; //elementos da array
+        classA.forEach(somaClassA = (item) => sumClassA += item); //estou dizendo que os elementos da array classA será passado como parametro para a função somaClassA com o nome de item.
+        document.getElementById('demo4').innerHTML = `O valor da soma dos elementos da class a é: ` + sumClassA;
+        
+        //parte 5 somar tudo que estiver entro da classe a se b for maior que 1
+    
+        if (n5 > 1){
+            const classA =[n3, n4]; 
+            classA.forEach(somaClassA = (item) => sumClassA += item);
+            document.getElementById('demo5').innerHTML = 'Resultado exibido na linha acima.';
+        } else {
+            document.getElementById('demo5').innerHTML = 'Condição não alcançada para a realização do cálculo.';
+        }
+    };          
+
+</script>
+
+</body>
+</html>
