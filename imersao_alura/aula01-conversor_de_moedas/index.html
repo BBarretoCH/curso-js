@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #retorno {
+            padding-top: 5px;
+            width: 177px;
+            height: 25px;
+            overflow: hidden;
+        }
+
+    </style>
+    <script src="aula01_conversorDeMoedas.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Aula 01 Conversor de Moedas</h1>
+    </header>
+
+    <section>
+
+        <p>
+             <input type="number" name="value" id="valuetxt">
+                <select name="s1value" id="s1value">
+                    <option value="escolha" selected>Escolha</option>
+                    <option value="bitcoin">bitcoin</option>
+                    <option value="dolar">dolar</option>
+                    <option value="euro">euro</option>
+                    <option value="libra">libra</option>
+                    <option value="real">real</option>
+                </select>
+        </p>
+
+        <p>
+            <div id="res"> 
+                <select name="retorno" id="retorno" size="2"></select>
+                <select name="s2value" id="s2value">
+                    <option value="escolha" selected>Escolha</option>
+                    <option value="bitcoin">bitcoin</option>
+                    <option value="dolar">dolar</option>
+                    <option value="euro">euro</option>
+                    <option value="libra">libra</option>
+                    <option value="real">real</option>
+                </select>
+        </div>
+        </p>
+        
+        <p>
+            <input type="button" value="Converter" onclick="converter()">
+        </p>
+    </section>
+
+    <script>
+        function converter() {
+            
+            let valueTxt = document.getElementById('valuetxt').value;
+            let valueNumber = Number(valueTxt);
+
+            let coinsTxt = [
+                document.getElementById('s1value').value, //array
+                document.getElementById('s2value').value
+            ];
+
+            if (valueTxt.length === 0) {
+
+                alert('Por favor insira um valor');
+
+            } else if (coinsTxt[0] == 'escolha' || coinsTxt[1] == 'escolha') {
+
+                alert('por favor selecione uma moeda válida');
+                
+            } else if (coinsTxt[0] == coinsTxt[1]){
+
+                alert('por favor selecione moedas diferentes para converter');
+
+            } else {
+
+                    function choosed(coin1,coin2){
+                        if (coin1 === 'bitcoin') {
+                            
+                            switch(coin2) {
+                                case 'dolar':
+                                    return 'US$ ' + (valueNumber * 22786.20).toFixed(2);
+                                    break;
+                                    
+                                case 'euro': 
+                                    return '€ ' + (valueNumber * 21011.42).toFixed(2);
+                                    break;
+                                    
+                                case 'libra':
+                                    return '£ ' + (valueNumber * 18458.39).toFixed(2);
+                                    break;
+                                    
+                                case 'real':
+                                    return 'R$ ' + (valueNumber * 116560.47).toFixed(2);
+                                    break;    
+                            }
+
+                        } else if(coin1 === 'dolar') {
+
+                            switch(coin2) {
+                                case 'bitcoin':
+                                    return 'BTC ' +  valueNumber * 0.000044;
+                                    break;
+                                    
+                                case 'euro': 
+                                    return '€ ' + (valueNumber * 0.92).toFixed(2);
+                                    break;
+                                    
+                                case 'libra':
+                                    return '£ ' + (valueNumber*0.81).toFixed(2);
+                                    break;
+                                    
+                                case 'real':
+                                    return 'R$ ' + (valueNumber * 5.12).toFixed(2);
+                                    break;    
+                            }
+
+                        } else if (coin1 === 'euro') {
+
+                            switch(coin2) {
+                                case 'bitcoin':
+                                    return 'BTC ' +   valueNumber * 0.000047;
+                                    break;
+                                    
+                                case 'dolar': 
+                                    return 'US$ ' +  (valueNumber * 1.09).toFixed(2);
+                                    break;
+                                    
+                                case 'libra':
+                                    return '£ ' + ( valueNumber * 0.88).toFixed(2);
+                                    break;
+                                    
+                                case 'real':
+                                    return 'R$ ' +  (valueNumber * 5.55).toFixed(2);
+                                    break;    
+                            }
+
+                        } else if (coin1 === 'libra') {
+
+                            switch(coin2) {
+                                case 'bitcoin':
+                                    return 'BTC ' + valueNumber * 0.000054;
+                                    break;
+                                    
+                                case 'dolar': 
+                                    return 'US$ ' +  (valueNumber * 1.24).toFixed(2);
+                                    break;
+                                    
+                                case 'euro':
+                                    return '€ ' +  (valueNumber * 1.14).toFixed(2);
+                                    break;
+                                    
+                                case 'real':
+                                    return 'R$ ' +  (valueNumber * 6.32).toFixed(2);
+                                    break;    
+                            }
+                            
+                        } else if (coin1 === 'real'){
+
+                            switch(coin2) {
+                                case 'bitcoin':
+                                    return 'BTC ' +  valueNumber * 0.0000085;
+                                    break;
+                                    
+                                case 'dolar': 
+                                    return 'US$ ' + (valueNumber * 0.20).toFixed(2);
+                                    break;
+                                    
+                                case 'euro':
+                                    return '€ ' + (valueNumber * 0.18).toFixed(2);
+                                    break;
+                                    
+                                case 'libra':
+                                    return '£ ' + (valueNumber * 0.16).toFixed(2);
+                                    break;    
+                            }
+                        }
+                    }
+
+                document.getElementById('retorno').innerHTML = '';
+
+                let conversion = choosed(coinsTxt[0],coinsTxt[1]);
+
+                let item = document.createElement('option');
+
+                item.text = conversion;
+            
+                document.getElementById('retorno').appendChild(item);
+                }    
+                               
+            }  
+    </script>
+</body>
+</html>
