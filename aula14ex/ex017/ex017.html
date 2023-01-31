@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(28, 106, 170);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        section {
+            background-color: white;
+            width: 500px;
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+        }
+
+        .contar {
+            padding: 10px;
+            width: 80px;
+            border-radius: 5px;
+        }
+
+        .contar:hover {
+            background-color: rgb(0, 0, 65);
+            color: white;
+            font-weight: bold;
+        }
+
+
+        footer {
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Número: <input type="number" name="txtn" id="txtn">
+                <input type="button" value="Gerar Tabuada" onclick="clicar()">
+            </p>
+
+        </div>
+
+        <div>
+            <select name="seltab" id="seltab" size="10">
+                
+            </select>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Feito por Bruno Barreto</p>
+    </footer>
+
+    <script>
+        function clicar() {
+            let num = document.getElementById('txtn')
+            let tab = document.getElementById('seltab')
+            if (num.value.length == 0) {
+                window.alert('Por favor insira um número')
+            } else {
+                let n = Number(num.value)
+                let c = 1
+                tab.innerHTML = ''
+                while(c <= 10) {
+                    let item = document.createElement('option')
+                    item.text = `${n} x ${c} = ${n*c}`
+                    item.value = `tab${c}`
+                    tab.appendChild(item)
+                    c++
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
